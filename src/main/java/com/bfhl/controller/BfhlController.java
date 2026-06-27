@@ -34,4 +34,14 @@ public class BfhlController {
         BfhlResponse response = bfhlService.processData(request);
         return ResponseEntity.ok(response);
     }
+
+    /**
+     * Standard GET endpoint for BFHL challenge.
+     * @return HTTP 200 with operation_code: 1
+     */
+    @GetMapping
+    public ResponseEntity<java.util.Map<String, Integer>> getOperationCode() {
+        return ResponseEntity.ok(java.util.Collections.singletonMap("operation_code", 1));
+    }
 }
+
